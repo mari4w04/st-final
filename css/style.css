@@ -278,7 +278,7 @@ h3{
 .hidden-flex-1{
     visibility: hidden;
 }
-.facebook-link{
+.facebook-link, .ticket-link{
     background-color: #0066cc;
     color: white !important;
     border: none;
@@ -287,6 +287,9 @@ h3{
     font-weight: 700;
     padding: 10px 15px;
     letter-spacing: 0.1em;
+}
+.ticket-link{
+    margin-right: 10px;
 }
 .logo-text path, .logo-text polygon, .logo-text rect, .logo-text text{
     fill: #333;

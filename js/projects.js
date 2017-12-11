@@ -15,11 +15,12 @@ function showProjects(data){
     let projectlist = document.querySelector("#projects");
     let template = document.querySelector("#projectTemplate").content;
     let modal = document.querySelector('.modal');
+    let closeBtn = document.querySelector('.close-btn');
     data.sort(function (a, b) {
       return a.acf.order_number - b.acf.order_number;
     });
 
-        modal.addEventListener('click', function(){
+        closeBtn.addEventListener('click', function(){
             modal.classList.add('hidden');
         });
     data.forEach(function(theProject){
