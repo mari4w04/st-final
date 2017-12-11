@@ -334,14 +334,27 @@ h3{
 .play{
     cursor: pointer;
 }
+footer .social{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+footer .social a{
+    margin-right: 25px;
+}
+footer .social a:last-child{
+    margin-right: 0;
+}
 footer{
     height: 60px;
     margin-top: 50px;
+    padding-bottom: 40px;
 }
 footer .container{
     text-align: center;
     text-transform: uppercase;
     font-size: 15px;
+    color: #c9c9c9;
 }
 #compositions .composition{
     width: 30%;
