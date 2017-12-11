@@ -19,15 +19,8 @@ var io = new IntersectionObserver(
               imagesHaveAnimated = true;
           }
       })
-      //console.log(entries)
-      /*if(entries[0].isIntersecting){
-
-            TweenLite.from(img1, 1, {opacity: 0.3, x: -500});
-        }*/
   },
   options
 );
-// Start observing an element
+
 io.observe(document.querySelector('.text h1'));
-//io.observe(document.querySelector('.img-2'));
-//io.observe(document.querySelector('.img-3'));

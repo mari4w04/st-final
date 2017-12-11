@@ -20,28 +20,21 @@ function showProjects(data){
       return a.acf.order_number - b.acf.order_number;
     });
 
-        closeBtn.addEventListener('click', function(){
-            modal.classList.add('hidden');
-        });
+    closeBtn.addEventListener('click', function(){
+        modal.classList.add('hidden');
+    });
     data.forEach(function(theProject){
         console.log(theProject);
         let clone = template.cloneNode(true);
         let img = clone.querySelector(".project-img");
         let title = clone.querySelector(".project-title");
-        //let description = clone.querySelector(".project-description");
-
-        //img.setAttribute("src", theProject._embedded["wp:featuredmedia"][0].source_url);
         img.setAttribute("style", "background-image: url("+theProject._embedded["wp:featuredmedia"][0].source_url+")");
         title.textContent = theProject.title.rendered;
-        //description.innerHTML = theProject.content.rendered;
-
 
         function showDetails(data){
 
             let name = modal.querySelector('.modal-content h1');
             let description = modal.querySelector('.modal-content .description');
-            //let modalPrice =modal.querySelector('.modal-price');
-            //let modalSoldOut = modal.querySelector('.modal-soldout');
             console.log(data);
             name.textContent = data.title.rendered;
             description.innerHTML=data.content.rendered;
@@ -65,10 +58,6 @@ function showProjects(data){
                showDetails(productJson);
             });
         });
-
-
-
-
 
         projectlist.appendChild(clone);
     });

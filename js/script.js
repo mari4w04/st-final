@@ -5,7 +5,7 @@ let imagesHaveAnimated = false;
 var img1 = document.querySelector('.img-1');
 var img2 = document.querySelector('.img-2');
 var img3 = document.querySelector('.img-3');
-  //          TweenLite.set(img1, {opacity:0})
+
 var io = new IntersectionObserver(
   entries => {
       entries.forEach(function(entry){
@@ -17,18 +17,11 @@ var io = new IntersectionObserver(
               imagesHaveAnimated = true;
           }
       })
-      //console.log(entries)
-      /*if(entries[0].isIntersecting){
-
-            TweenLite.from(img1, 1, {opacity: 0.3, x: -500});
-        }*/
   },
   options
 );
-// Start observing an element
+
 io.observe(document.querySelector('.text h1'));
-//io.observe(document.querySelector('.img-2'));
-//io.observe(document.querySelector('.img-3'));
 
 let loader = document.querySelector(".overlay")
 let modalLoader = document.querySelector(".modal-overlay");
@@ -39,13 +32,6 @@ function getAllEvents(){
     .then(res=>res.json())
     .then(showEvents);
 }
-
-/*function getSingleEventById(myId){
-    console.log(myId);
-    fetch("http://marijabelautdinova.com/wp/wp-json/wp/v2/stevents/"+myId+"/?_embed")
-    .then(res=>res.json())
-    .then(showSingleEvent);
-};
 
 function showSingleEvent(json){
 
@@ -59,16 +45,14 @@ function showSingleEvent(json){
     document.querySelector(".single-event img").setAttribute("src", json._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url);
     document.querySelector(".single-event .date").textContent= d+"."+m;
     document.querySelector(".single-event .time").textContent=json.acf.time;
-
     document.querySelector(".single-event .location").textContent=json.acf.location;
     document.querySelector(".single-event .city").innerHTML=json.acf.city;
     document.querySelector(".single-event .country").innerHTML=json.acf.country;
-
     document.querySelector(".single-event .description").innerHTML=json.content.rendered;
 
 
 
-};*/
+};
 
 function showEvents(data){
     let eventlist = document.querySelector("#events");
@@ -86,31 +70,9 @@ function showEvents(data){
             let location = clone.querySelector(".location");
             let country = clone.querySelector(".country");
             let city = clone.querySelector(".city");
-            //let eventLink = clone.querySelector(".event-link");
             let facebookLink = clone.querySelector('.facebook-link');
             let ticketLink = clone.querySelector('.ticket-link');
 
-            //let startingTime = clone.querySelector(".starting-time");
-            //let doorsOpen = clone.querySelector(".doors-open span");
-            //let title = clone.querySelector("h1");
-            //let description = clone.querySelector(".description");
-            //let smallDescription = clone.querySelector(".small-description");
-            //let price = clone.querySelector(".price span");
-            //let facebookLink = clone.querySelector(".facebook-link");
-            //let ticketLink = clone.querySelector(".ticket-link");
-            //let img = clone.querySelector("img");
-            //let link = clone.querySelector("a.read-more");
-            //let price = clone.querySelector(".price");
-
-            //title.textContent = theEvent.title.rendered;
-            //description.innerHTML = theEvent.content.rendered;
-            //price.textContent = theEvent.acf.price;
-            //console.log(theEvent._embedded["wp:featuredmedia"][0].media_details.sizes);
-            //img.setAttribute("src", theEvent._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url);
-
-            //startingTime.textContent = theEvent.acf.starting_time;
-            //smallDescription.innerHTML = theEvent.acf.small_description;
-            //doorsOpen.textContent = theEvent.acf.doors_open;
             location.textContent = theEvent.acf.location;
             country.textContent = theEvent.acf.country;
             city.textContent = theEvent.acf.city;
@@ -126,14 +88,6 @@ function showEvents(data){
                 ticketLink.classList.add("hidden-flex-1");
             }
 
-
-
-            //facebookLink.setAttribute("href", theEvent.acf.facebook_link);
-            //ticketLink.setAttribute("href", theEvent.acf.link_to_buy_a_ticket);
-            //price.textContent = theEvent.acf.price;
-            //eventLink.setAttribute("href", "stevent.html?id="+theEvent.id);
-
-
             let nd=theEvent.acf.date;
             let y = nd.substring(0, 4);
             let m = nd.substring(4, 6);
@@ -147,10 +101,6 @@ function showEvents(data){
     });
     loader.classList.add('hidden');
 
-
-
 };
 
-
 getAllEvents();
-
