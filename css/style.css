@@ -419,6 +419,10 @@ footer .container{
         font-weight: 500;
         margin: 40px 15px 50px 15px;
     }
+    .desktop-menu a:hover, .active{
+        color: #0066cc !important;
+        border-bottom: 1px solid #0066cc;
+    }
     .about-stian .images2{
         display: none;
     }
