@@ -72,20 +72,24 @@ function showEvents(data){
             let city = clone.querySelector(".city");
             let facebookLink = clone.querySelector('.facebook-link');
             let ticketLink = clone.querySelector('.ticket-link');
+            let eventLinksBlock = clone.querySelector('.event-links');
 
             location.textContent = theEvent.acf.location;
             country.textContent = theEvent.acf.country;
             city.textContent = theEvent.acf.city;
             if(theEvent.acf.facebooklink){
+                console.log(facebookLink);
                 facebookLink.setAttribute("href", theEvent.acf.facebooklink);
             }else{
                 facebookLink.classList.add("hidden-flex-1");
+                //eventLinksBlock.classList.add("hidden-flex-1");
             }
 
             if(theEvent.acf.ticketlink){
                 ticketLink.setAttribute("href", theEvent.acf.ticketlink);
             }else{
                 ticketLink.classList.add("hidden-flex-1");
+                //eventLinksBlock.classList.add("hidden-flex-1");
             }
 
             let nd=theEvent.acf.date;

@@ -28,10 +28,12 @@
                 <span></span>
 
                 <ul id="menu">
-                  <a href="#"><li>Home</li></a>
-                  <a href="#"><li>About</li></a>
-                  <a href="#"><li>Info</li></a>
-                  <a href="#"><li>Contact</li></a>
+                  <a href="index.html"><li>Home</li></a>
+                  <a href="about.html"><li>About</li></a>
+                  <a href="projects.html"><li>Projects</li></a>
+                  <a href="concerts.html"><li class="active">Concerts</li></a>
+                  <a href="music.html"><li>Music</li></a>
+                  <a href="contact.html"><li>Contact</li></a>
                 </ul>
               </div>
             </nav>
@@ -100,13 +102,17 @@
 
         <template id="eventTemplate">
             <div class="event-link">
-                <span class="date"></span>
-                <div class="place">
-                    <span class="location"></span>
-                    <div class="city-country"><span class="city"></span>, <span class="country"></span></div>
+                <div class="date-and-place">
+                    <span class="date"></span>
+                    <div class="place">
+                        <span class="location"></span>
+                        <div class="city-country"><span class="city"></span>, <span class="country"></span></div>
+                    </div>
                 </div>
-                <a class="ticket-link" href="">Buy ticket</a>
-                <a class="facebook-link" href="">Facebook</a>
+                <div class="event-links">
+                    <a class="ticket-link" href="">Buy ticket</a>
+                    <a class="facebook-link" href="">Facebook</a>
+                </div>
             </div>
         </template>
 

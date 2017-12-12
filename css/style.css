@@ -49,11 +49,12 @@ body{
 }
 .date, .location{
     font-weight: 600;
-    margin-right: 15px;
+    margin: 10px 15px 10px 0;
 }
 .location{
 
 }
+
 .album-img{
     height: 350px;
     width: 350px;
@@ -63,6 +64,10 @@ body{
     flex-direction: column;
     align-items: center;
     font-size: 15px;
+    margin-top: 50px;
+}
+.album:first-child{
+    margin-top: 0;
 }
 .album .title{
     font-family: 'Poppins', sans-serif;
@@ -123,13 +128,6 @@ a.btn{
     border: 2.5px solid white;
     box-sizing: border-box;
 }
-.project-img:nth-child(2), .project-img:nth-child(4){
-    height: 500px;
-}
-.project-img:nth-child(5), .project-img:nth-child(7){
-    margin-top: -200px;
-    height: 400px;
-}
 .project-button{
     cursor: pointer;
 }
@@ -147,39 +145,19 @@ a.btn{
 }
 #projects{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
 }
 .events-top{
-    padding: 0 0 0 15px;
-    display: flex;
-    color: rgb(98,98,98);
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    font-weight: 700;
-}
-.events-top .date{
-    font-weight: 700 !important;
-    flex: 0.5;
-}
-.events-top .venue{
-    flex: 2;
-}
-.events-top .location{
-    font-weight: 700 !important;
-    flex: 2.5;
-}
-.events-top .fb-name{
-    flex: 0.8;
+    display: none;
 }
 .header{
-    background-image: url(../img/bg.jpg);
-    background-size: contain;
+    background-image: url(../img/bg.png);
+    background-size: cover;
     width: 100%;
     background-repeat: no-repeat;
     background-position: right;
-    height: 500px;
+    height: 350px;
 }
 .header .menu .logo{
     height: 35px;
@@ -243,7 +221,7 @@ hr{
 .about-stian .text p{
     line-height: 1.8em;
     color: #222;
-    margin: 0 20px 30px 0;
+    margin: 0 0 30px 0;
 }
 .about-stian .text{
     margin-top: 1.2vw;
@@ -269,7 +247,7 @@ h3{
     font-weight: 400;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
-    margin: 0 0 40px 0;
+    margin: 0 20px 40px 20px;
     padding-top: 30px;
 }
 .hr-small{
@@ -279,7 +257,7 @@ h3{
     height: 2px;
 }
 .hidden-flex-1{
-    visibility: hidden;
+    display: none;
 }
 .facebook-link, .ticket-link{
     background-color: #0066cc;
@@ -302,6 +280,9 @@ h3{
 }
 .logo-container{
     height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
 }
 .st0{
     font-family:'moonlight';
@@ -328,8 +309,8 @@ h3{
 }
 #compositions{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 .play{
     cursor: pointer;
@@ -357,10 +338,14 @@ footer .container{
     color: #c9c9c9;
 }
 #compositions .composition{
-    width: 30%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 70%;
+    margin-bottom: 50px;
+}
+#compositions .composition:last-child{
+    margin-bottom: 0;
 }
 #compositions .composition-title{
     font-family: 'Poppins', sans-serif;
@@ -378,9 +363,9 @@ footer .container{
     background-size: contain;
 }
 .contact-page{
-    width: 40%;
     text-align: center;
     margin: 50px auto 100px auto;
+    width: 80%;
 }
 .no-overflow{
     overflow-x: hidden;
@@ -402,9 +387,41 @@ footer .container{
 .dropdown:hover .dropdown-content {
     display: block;
 }
-@media (min-width: 600px){
+.hide{
+    display: none;
+}
+.event-link{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.event-links{
+    padding: 20px 0;
+}
+.active{
+    color: #0066cc !important;
+    border-bottom: 1px solid #0066cc;
+    padding-bottom: 5px;
+}
+.img-6, .img-7{
+    width: 100%;
+}
+.date-and-place{
+    margin-top: 10px;
+}
+
+@media (min-width: 1024px){
     body{
 
+    }
+    .hide{
+        display: block;
+    }
+    .event-link{
+        flex-direction: row;
+        padding: 20px;
+    }
+    .event-links{
+        padding: 0;
     }
     .header{
         margin: 0px 11vw;
@@ -423,6 +440,10 @@ footer .container{
     nav{
         display: none;
     }
+    .logo-container{
+        display: block;
+        margin-left: 0;
+    }
     .desktop-menu{
         display: flex;
         justify-content: center;
@@ -440,6 +461,7 @@ footer .container{
     .desktop-menu a:hover, .active{
         color: #0066cc !important;
         border-bottom: 1px solid #0066cc;
+        padding-bottom: 5px;
     }
     .about-stian .images2{
         display: none;
@@ -448,11 +470,11 @@ footer .container{
         display: block;
     }
     .img-1{
-        width: 300px;
-        height: 426px;
+        width: 200px;
+        height: 284px;
     }
     .img-2, .img-3{
-        width: 300px;
+        width: 200px;
     }
     .img-4, .img-5, .img-6, .img-7{
         width: 330px;
@@ -478,15 +500,10 @@ footer .container{
     }
     .place{
         flex-direction: row;
-    }
-    .place{
-        flex: 2;
+        margin-left: 50px;
     }
     .date{
-        flex: 0.5;
-    }
-    .events-top .date {
-        flex: 0.63;
+
     }
     #albums{
         flex-direction: row;
@@ -498,7 +515,81 @@ footer .container{
         margin-left: 0.5vw;
         margin-top: 8vw;
     }
+    .date-and-place{
+        margin-top: 0;
+        display: flex;
+    }
+    .events-top{
+        padding: 0 0 0 15px;
+        display: flex;
+        color: rgb(98,98,98);
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+    }
+    .events-top .date{
+        font-weight: 700 !important;
+    }
+    .events-top .venue{
 
+    }
+    .events-top .location{
+        font-weight: 700 !important;
+        flex: 2.5;
+    }
+    .events-top .fb-name{
+        flex: 0.8;
+    }
+    .date, .location{
+        margin: 0 15px 0 0;
+    }
+    h3{
+        margin: 0 0 40px 0;
+    }
+    .about-stian .text p{
+        margin: 0 20px 30px 0;
+    }
+    #projects{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .project-img:nth-child(2), .project-img:nth-child(4){
+        height: 500px;
+    }
+    .project-img:nth-child(5), .project-img:nth-child(7){
+        margin-top: -200px;
+        height: 400px;
+    }
+    .modal-content{
+        padding: 30px 50px !important;
+        width: 60% !important;
+    }
+    .album{
+        margin-top: 0;
+    }
+    #compositions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #compositions .composition{
+        width: 30%;
+        margin-bottom: 0;
+    }
+    .contact-page{
+        width: 40%;
+    }
+
+}
+
+@media (min-width: 1100px){
+    .img-1{
+        width: 300px;
+        height: 426px;
+    }
+    .img-2, .img-3{
+        width: 300px;
+    }
 }
 
 /*Menu css*/
@@ -540,7 +631,7 @@ nav{
 #menuToggle span
 {
   display: block;
-  width: 30px;
+  width: 31px;
   height: 3px;
   margin-bottom: 5px;
   position: relative;
@@ -607,7 +698,7 @@ nav{
   padding: 50px;
   padding-top: 125px;
   height: 100vh;
-  background: #ededed;
+  background: #e2e2e2;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -616,12 +707,24 @@ nav{
   transform: translate(-100%, 0);
 
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    display: flex;
+    flex-direction: column;
 }
 
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 22px !important;
+    letter-spacing: 0.2em;
+    color: black;
+    font-weight: 500;
+    margin: 0 15px;
+    margin: 20px 0;
+    display: inline-block;
+}
+#menu a{
+    text-decoration: none !important;
+
 }
 
 /*
@@ -651,10 +754,10 @@ nav{
 }
 .modal-content{
     background-color: #fefefe;
-    padding: 30px 50px;
-    width: 60%;
     overflow-y: auto;
     height: 80vh;
+    padding: 30px 15px;
+    width: 90%;
 }
 .modal-content h1{
     -webkit-margin-before: 0;
