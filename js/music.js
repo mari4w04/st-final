@@ -72,6 +72,9 @@ function showCompositions(data){
         });
 
     });
+    if(window.location.hash){
+        window.location=window.location.hash;
+    }
     loader.classList.add('hidden');
 };
 
