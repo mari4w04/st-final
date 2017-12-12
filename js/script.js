@@ -1,3 +1,5 @@
+/*Intersection observer was borrowed from https://developers.google.com/web/updates/2016/04/intersectionobserver*/
+
 var options = {
     threshold: 1.0
 }
@@ -11,6 +13,7 @@ var io = new IntersectionObserver(
       entries.forEach(function(entry){
           if(entry.isIntersecting && imagesHaveAnimated==false){
               console.log(entry.target);
+              /*Animation from Greensock*/
               TweenLite.from(img1, 2.5, {opacity: 0.3, x: -500});
               TweenLite.from(img2, 1.5, {opacity: 0.3, x: -500});
               TweenLite.from(img3, 2, {opacity: 0.3, x: -500});
@@ -22,6 +25,8 @@ var io = new IntersectionObserver(
 );
 
 io.observe(document.querySelector('.text h1'));
+
+/*End of intersection observer*/
 
 let loader = document.querySelector(".overlay")
 let modalLoader = document.querySelector(".modal-overlay");
