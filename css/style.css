@@ -529,6 +529,7 @@ footer .container{
     }
     .events-top .date{
         font-weight: 700 !important;
+        width: 20vh;
     }
     .events-top .venue{
 
