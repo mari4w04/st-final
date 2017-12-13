@@ -40,13 +40,13 @@ function showProjects(data){
             description.innerHTML=data.content.rendered;
 
             modal.classList.remove('hidden');
-            modalLoader.classList.add('hidden')
+            modalLoader.classList.add('hidden');
             };
 
         let projectButton = clone.querySelector('.project-button');
 
         projectButton.addEventListener('click', function(e){
-            modalLoader.classList.remove('hidden')
+            modalLoader.classList.remove('hidden');
             e.preventDefault();
             console.log('click');
             console.log(theProject.id);
