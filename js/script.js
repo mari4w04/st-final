@@ -38,27 +38,6 @@ function getAllEvents(){
     .then(showEvents);
 }
 
-function showSingleEvent(json){
-
-    let nd=json.acf.date;
-    let y = nd.substring(0, 4);
-    let m = nd.substring(4, 6);
-    let d = nd.substring(6,8);
-    let ts = new Date(y, m-1, d);
-
-    document.querySelector(".single-event h1").textContent=json.title.rendered;
-    document.querySelector(".single-event img").setAttribute("src", json._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url);
-    document.querySelector(".single-event .date").textContent= d+"."+m;
-    document.querySelector(".single-event .time").textContent=json.acf.time;
-    document.querySelector(".single-event .location").textContent=json.acf.location;
-    document.querySelector(".single-event .city").innerHTML=json.acf.city;
-    document.querySelector(".single-event .country").innerHTML=json.acf.country;
-    document.querySelector(".single-event .description").innerHTML=json.content.rendered;
-
-
-
-};
-
 function showEvents(data){
     let eventlist = document.querySelector("#events");
     let template = document.querySelector("#eventTemplate").content;
